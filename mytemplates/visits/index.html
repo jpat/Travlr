@@ -1,0 +1,9 @@
+{% if latest_visits %}
+    <ul>
+    {% for visit in latest_visits %}
+	<li><a href="/visits/{{ visit.id }}/">{{ visit.country }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nobody has visited anything.</p>
+{% endif %}
