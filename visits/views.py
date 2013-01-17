@@ -1,18 +1,17 @@
 # Create your views here.
 
-from django.http import HttpResponse
-from django.template import Context, loader
+from django.http import HttpResponse, Http404
+from django.shortcuts import render , get_object_or_404
+#from django.template import Context, loader
 
 from visits.models import Visit
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the poll index.")
-    #latest_trips = Visit.objects.order_by('-pub_date')[:10]
-    #template = loader.get_template('visits/index.html')
-    #context = Context({
-#	'latest_trips': latest_trips,
-    #})
-   # return HttpResponse(template.render(context))
+    latest_visits = Visit.objects.order_by('-pub_date')[:10]
+    context = {'latest_visits': latest_visits}
+    return render(request, 'visits/index.html', context)
+
 
 def detail(request, visit_id):
-    return HttpResponse("You're looking at visit %s." % visit_id)
+    visit = get_object_or_404(Visit, pk=visit_id)
+    return render(request, 'visits/detail.html', {'visit': visit})
