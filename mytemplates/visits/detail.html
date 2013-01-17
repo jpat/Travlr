@@ -1,1 +1,8 @@
-{{ visit }}
+<h1>Visit {{visit.id}}: Detail view</h1>
+
+<p>User: {{ visit.user }}</p>
+<p>Name: {{ visit.user.last_name }}, {{ visit.user.first_name }}</p>
+<p>Country: {{ visit.country }}</p>
+<p>Date of trip: {{ visit.visitDate }} </p>
+<p>Date posted: {{ visit.pub_date }} </p>
+

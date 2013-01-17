@@ -1,9 +1,19 @@
-{% if latest_visits %}
+<!--{% if latest_visits %}
     <ul>
     {% for visit in latest_visits %}
-	<li><a href="/visits/{{ visit.id }}/">{{ visit.country }}</a></li>
+	<li><a href="{% url detail visit.id %}">{{ visit.country }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
     <p>Nobody has visited anything.</p>
-{% endif %}
+{% endif %} -->
+
+<head>
+<h1> Welcome to Travlr! </h1>
+</head>
+
+<body>
+<h2> Log in to get started. </h2>
+</body>
+
+
