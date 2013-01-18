@@ -77,8 +77,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-LOGIN_URL = 'visits/login/'
-LOGIN_REDIRECT_URL = '/visits/'
+LOGIN_URL = 'login/'
+LOGIN_REDIRECT_URL = '/visits'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'eq6_j3yp)-7xkfca=5e*lvq&amp;dioc@s$dmuv9&amp;87$g1dhn_$8i_'

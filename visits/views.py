@@ -7,11 +7,12 @@ from django.contrib.auth.decorators import login_required
 
 from visits.models import Visit
 
-@login_required
+#@login_required
 def index(request):
-    latest_visits = Visit.objects.order_by('-pub_date')[:10]
-    context = {'latest_visits': latest_visits}
-    return render(request, 'visits/index.html', context)
+    return render(request, 'visits/index.html')
+    #latest_visits = Visit.objects.order_by('-pub_date')[:10]
+    #context = {'latest_visits': latest_visits}
+    #return render(request, 'visits/index.html', context)
 
 @login_required
 def detail(request, visit_id):

@@ -12,8 +12,16 @@
 <h1> Welcome to Travlr! </h1>
 </head>
 
+
 <body>
-<h2> Log in to get started. </h2>
+
+{% if user.is_authenticated %}
+<h2> Successfully logged in. </h2>
+{% else %}
+<FORM METHOD="LINK" ACTION="login">
+<INPUT TYPE="submit" VALUE="Log In">
+</FORM>
+{% endif %}
 </body>
 
 
