@@ -1,8 +1,16 @@
-<h1>Visit {{visit.id}}: Detail view</h1>
+{% extends "travlr_base.html" %}
+{% block title %}Travlr: Detail{% endblock %}
 
+{% block heading %}Trip detail{% endblock %}
+
+{% block content %}
 <p>User: {{ visit.user }}</p>
-<p>Name: {{ visit.user.last_name }}, {{ visit.user.first_name }}</p>
+<p>Name: {{ visit.user.first_name }} {{ visit.user.last_name }} </p>
 <p>Country: {{ visit.country.name }}</p>
 <p>Date of trip: {{ visit.visitDate }} </p>
 <p>Date posted: {{ visit.pub_date }} </p>
 
+<FORM METHOD="LINK" ACTION="/visits">
+<INPUT TYPE="submit" VALUE="Back">
+</FORM>
+{% endblock %}

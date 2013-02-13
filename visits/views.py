@@ -16,6 +16,12 @@ def index(request):
 def thanks(request):
     return render(request, 'visits/thanks.html')
 
+def profile(request):
+    this_user = request.user
+    user_visits = Visit.objects.filter(user = this_user)
+    context = {'user': this_user, 'myvisits': user_visits}
+    return render(request, 'visits/profile.html', context)
+
 #@login_required
 #def visits(request):
     #latest_visits = Visit.objects.order_by('-pub_date')[:10]
@@ -42,6 +48,7 @@ def add_trip(request):
     #return render_to_response('visits/add_trip.html', context)
     return render_to_response('visits/add_trip.html', {'form': form},
 	context_instance=RequestContext(request))
+
 
     
 

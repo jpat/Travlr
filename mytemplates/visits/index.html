@@ -1,9 +1,12 @@
-<head>
-<h1> Welcome to Travlr! </h1>
-</head>
+{% extends "travlr_base.html" %}
+{% block title %}Travlr{% endblock %}
 
+{% block heading %}
+Welcome to Travlr!
+{% endblock %}
 
-<body>
+{% block content %}
+
 
 {% if user.is_authenticated %}
 <h2> Successfully logged in. </h2>
@@ -14,6 +17,7 @@
 </FORM>
 
 {% endif %}
-</body>
+
+{% endblock %}
 
 

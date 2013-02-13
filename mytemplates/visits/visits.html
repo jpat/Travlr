@@ -1,0 +1,29 @@
+{% extends "travlr_base.html" %}
+{% block title %}Travlr: Visits{% endblock %}
+
+
+
+{% block heading %}
+All Visits:
+{% endblock %}
+
+
+{% block content %}
+{% if latest_visits %}
+    <ul>
+    {% for visit in latest_visits %}
+	<li><a href="{% url detail visit.id %}">{{ visit.country.name }}</a> - {{ visit.user }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nobody has visited anything.</p>
+{% endif %}
+
+<FORM METHOD="LINK" ACTION="add_trip">
+<INPUT TYPE="submit" VALUE="Add another trip">
+</FORM>
+<FORM METHOD="LINK" ACTION="/">
+<INPUT TYPE="submit" VALUE="Back">
+</FORM>
+</body>
+{% endblock %}

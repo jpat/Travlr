@@ -1,0 +1,29 @@
+{% extends "travlr_base.html" %}
+{% block title %}Travlr: Visits{% endblock %}
+{% block heading %} My Profile {% endblock %}
+
+{% block content %}
+<body>
+Username: {{ user }}
+<p>
+Name: {{ user.first_name }} {{ user.last_name }}
+<p>
+Visits:
+<p>
+{% if myvisits %}
+    <ul>
+    {% for visit in myvisits %}
+	<li><a href="{% url detail visit.id %}">{{ visit.country.name }} - {{ visit.visitDate }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No visits yet.</p>
+{% endif %}
+</body>
+
+<p>
+<FORM METHOD="LINK" ACTION="/">
+<INPUT TYPE="submit" VALUE="Back">
+</FORM>
+</body>
+{% endblock %}

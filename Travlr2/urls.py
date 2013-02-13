@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.conf.urls.defaults import *
 
-from visits.views import index
+from visits.views import index, profile
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -22,5 +22,7 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
+    
+    url(r'^profile/$', profile),
     
 )

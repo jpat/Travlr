@@ -27,6 +27,7 @@ urlpatterns = patterns('',
     url(r'^add_trip/$', views.add_trip, name='add_trip'),
 
     url(r'^thanks/$', views.thanks, name='thanks'),
+
     
 
 )

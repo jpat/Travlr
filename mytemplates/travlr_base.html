@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}Travlr{% endblock %}</title>
+    <style type="text/css">
+	body {
+    	    padding-left: 11em;
+    	    color: white;
+    	    background-color: #43783A }
+	ul.navbar {
+    	    list-style-type: none;
+    	    padding: 0;
+    	    margin: 0;
+    	    position: absolute;
+    	    top: 2em;
+    	    left: 1em;
+    	    width: 9em }
+	ul.navbar li {
+    	    background: white;
+    	    margin: 0.5em 0;
+    	    padding: 0.3em;
+    	    border-right: 1em solid black }
+	ul.navbar a{
+    	    text-decoration: none }
+	a:link {
+    	    color: #EAF0AF }
+	a:visited {
+   	    color: #A8A8A8 }
+	address {
+    	    margin-top: 1em;
+    	    padding-top: 1em;
+   	    border-top: thin dotted }
+	</style>
+
+    <h1>{% block heading %}{%endblock%}</h1>
+    <hr>
+   
+</head>
+
+
+<body>  
+    <div id="sidebar">
+        {% block sidebar %}
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/visits/">Visits</a></li>
+	    <li><a href="/profile/">My Profile</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+
+    <div id="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
