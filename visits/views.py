@@ -35,21 +35,17 @@ def profile(request):
 
 def add_trip(request):
     if request.method == 'POST':
-    	form = VisitForm(request.POST)
-	if form.is_valid():
-	    visit = form.save(commit=False)
-	    visit.user = request.user
-	    visit.save()
-	   
-	    return HttpResponseRedirect(reverse('thanks'))
+        form = VisitForm(request.POST)
+
+        if form.is_valid():
+            visit = form.save(commit=False)
+            visit.user = request.user
+            visit.save()
+            form.save_m2m()
+            return HttpResponseRedirect(reverse('thanks'))
+
     else:
-	form = VisitForm()
-    #context = Context({'title': 'Add Visit', 'form': form})
-    #return render_to_response('visits/add_trip.html', context)
-    return render_to_response('visits/add_trip.html', {'form': form},
-	context_instance=RequestContext(request))
-
-
-    
+        form = VisitForm()
+    return render_to_response('visits/add_trip.html', {'form': form}, context_instance=RequestContext(request))
 
 

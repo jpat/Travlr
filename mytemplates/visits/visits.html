@@ -12,7 +12,7 @@ All Visits:
 {% if latest_visits %}
     <ul>
     {% for visit in latest_visits %}
-	<li><a href="{% url detail visit.id %}">{{ visit.country.name }}</a> - {{ visit.user }}</li>
+	<li><a href="{% url detail visit.id %}">{{ visit.country_names }}</a> - {{ visit.user }}</li>
     {% endfor %}
     </ul>
 {% else %}
