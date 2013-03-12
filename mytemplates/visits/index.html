@@ -1,14 +1,23 @@
-{% extends "travlr_base.html" %}
+{% extends "travlr_base_bs.html" %}
 {% block title %}Travlr{% endblock %}
 
 {% block heading %}
-Welcome to Travlr!
 {% endblock %}
 
 {% block content %}
 
+<div class="container">
+         
+	<div class="hero-unit">
+	    <h1>Welcome to Travlr.</h1>
+	    <p>Keep track of your trips around the world, or be jealous of your friends!</p>
+	    <p><a class="btn btn-primary btn-large">Get started &raquo;</a></p>
+	</div><!-- .hero-unit -->
+	        
+	 		
+</div><!-- .container -->
 
-{% if user.is_authenticated %}
+<!--{% if user.is_authenticated %}
 <h2> Successfully logged in. </h2>
 
 {% else %}
@@ -16,7 +25,7 @@ Welcome to Travlr!
 <INPUT TYPE="submit" VALUE="Log In">
 </FORM>
 
-{% endif %}
+{% endif %}-->
 
 {% endblock %}
 

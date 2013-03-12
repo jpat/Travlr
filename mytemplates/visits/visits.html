@@ -1,29 +1,47 @@
-{% extends "travlr_base.html" %}
+{% extends "travlr_base_bs.html" %}
 {% block title %}Travlr: Visits{% endblock %}
 
 
 
 {% block heading %}
-All Visits:
+
 {% endblock %}
 
 
 {% block content %}
+
 {% if latest_visits %}
-    <ul>
-    {% for visit in latest_visits %}
-	<li><a href="{% url detail visit.id %}">{{ visit.country_names }}</a> - {{ visit.user }}</li>
-    {% endfor %}
-    </ul>
+<div class="container">
+	<table class = "table table-striped">
+		<thead>  
+	        <tr>  
+	            <th>User</th>  
+	            <th>Date</th>  
+	            <th>Countries</th>  
+	        </tr>  
+	     </thead>  
+	     <tbody>
+	        {% for visit in latest_visits %}
+	        <tr>  
+	            <td>{{ visit.user }}</td>  
+	            <td>{{ visit.visitDate}}</td>  
+	            <td>{{ visit.country_names }}</td>  
+	        </tr>  
+	        {% endfor %} 
+	     </tbody>
+	</table>
+
+	<br>
+
+	<div>
+	<p><a class="btn btn-primary btn-medium" href="add_trip">Add another trip&raquo;</a></p>  
+	</div>
+</div> <!-- container -->
+
 {% else %}
-    <p>Nobody has visited anything.</p>
+<div class ="container">
+	No visits at this time.
+</div>
 {% endif %}
 
-<FORM METHOD="LINK" ACTION="add_trip">
-<INPUT TYPE="submit" VALUE="Add another trip">
-</FORM>
-<FORM METHOD="LINK" ACTION="/">
-<INPUT TYPE="submit" VALUE="Back">
-</FORM>
-</body>
 {% endblock %}

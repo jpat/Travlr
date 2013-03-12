@@ -9,3 +9,7 @@ class VisitForm(ModelForm):
 	class Meta:
 	    model = Visit
 	    exclude = ('user',)
+	    widgets = {
+	    	'countries': forms.SelectMultiple(attrs={'size': 10})
+	    }
+	    help_text = ""

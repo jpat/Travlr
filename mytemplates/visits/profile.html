@@ -1,4 +1,4 @@
-{% extends "travlr_base.html" %}
+{% extends "travlr_base_bs.html" %}
 {% block title %}Travlr: Visits{% endblock %}
 {% block heading %} My Profile {% endblock %}
 
@@ -13,7 +13,7 @@ Visits:
 {% if myvisits %}
     <ul>
     {% for visit in myvisits %}
-	<li><a href="{% url detail visit.id %}">{{ visit.country.name }} - {{ visit.visitDate }}</a></li>
+	<li><a href="{% url detail visit.id %}">{{ visit.visitDate }}: {{ visit.country_names }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

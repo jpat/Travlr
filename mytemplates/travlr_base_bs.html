@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>{% block title %}Travlr{% endblock %}</title>
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<!-- Bootstrap -->
+    	<link href="{{ STATIC_URL }}/css/bootstrap.min.css" rel="stylesheet">
+        <style type="text/css">
+          h1 {
+            padding-left: 100px;
+          }
+          body {
+            padding-top: 60px;
+            padding-bottom: 40px;
+          }
+        </style>
+        <h1>{% block heading %}{% endblock %}</h1>
+	</head>
+
+	<body>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="brand" href="/">Travlr</a>
+                <ul class="nav">
+                  <li class="active"><a href="/">Home</a></li>
+                  <li><a href="/visits/add_trip">Add a Trip</a></li>
+                  <li><a href="/visits">All Trips</a></li>
+                  <li><a href="/profile">My Profile</a></li> 
+                </ul>
+                <ul class="nav pull-right">
+                  <li><a href="#">Sign Up</a></li>
+                  <li><a href="/login">Log In</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
+  </body>
+</html>
